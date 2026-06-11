@@ -263,7 +263,7 @@ python tools/visualize_data.py \
 
 ## 致谢
 
-本项目基于 Detectron2、AdelaiDet、Deformable DETR 和 Swin Transformer 构建。
+本项目基于 Detectron2、AdelaiDet、Deformable DETR、Swin Transformer 和 OSFormer 构建。
 
 ## 引用
 
@@ -547,7 +547,7 @@ python tools/visualize_data.py \
 
 ## Acknowledgements
 
-This project builds on Detectron2, AdelaiDet, Deformable DETR, and Swin Transformer.
+This project builds on Detectron2, AdelaiDet, Deformable DETR, Swin Transformer, and OSFormer.
 
 ## Citation
 
