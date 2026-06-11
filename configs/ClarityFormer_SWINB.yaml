@@ -1,0 +1,18 @@
+_BASE_: "Base-ClarityFormer.yaml"
+MODEL:
+  WEIGHTS: ""  # set to a Swin ImageNet pretrained checkpoint if used
+  BACKBONE:
+    NAME: "D2SwinTransformer"
+  SWIN:
+    EMBED_DIM: 128            # Swin-B 维度增加
+    DEPTHS: [ 2, 2, 18, 2 ]
+    NUM_HEADS: [ 4, 8, 16, 32 ] # 头数相应增加
+    WINDOW_SIZE: 7
+    APE: False
+    DROP_PATH_RATE: 0.3
+    PATCH_NORM: True
+  PIXEL_MEAN: [ 123.675, 116.280, 103.530 ]
+  PIXEL_STD: [ 58.395, 57.120, 57.375 ]
+INPUT:
+  MIN_SIZE_TRAIN: (800,)
+  MIN_SIZE_TEST: 800

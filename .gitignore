@@ -1,0 +1,37 @@
+# Python/cache
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local IDE/system files
+.idea/
+.vscode/
+.DS_Store
+*.ipynb
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.so
+
+# Outputs and experiment folders
+output/
+outputs/
+tools/output*/
+tools/3090-*/
+tools/[uiis]-[usis]-c/
+
+# Weights, datasets, and release archives
+pretrained/
+datasets/
+*.pth
+*.pt
+*.pkl
+*.tar
+*.tar.gz
+*.zip
