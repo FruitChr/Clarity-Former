@@ -96,10 +96,8 @@ export CLARITY_FORMER_USIS16K_ROOT=/path/to/USIS16K
 
 发布的 Clarity-Former 权重以 `pretrained.tar.gz` 提供：
 
-```text
-百度网盘: https://pan.baidu.com/s/1fQ94UC5yvKFOKFJM1JpMYw?pwd=56md
-提取码: 56md
-```
+- 百度网盘: [pretrained.tar.gz](https://pan.baidu.com/s/1fQ94UC5yvKFOKFJM1JpMYw?pwd=56md)
+- 提取码: `56md`
 
 将压缩包解压到项目根目录，使目录结构成为 `pretrained/ClarityFormer/` 和 `pretrained/SwinTransformer/`。
 
@@ -123,7 +121,7 @@ PYTHONWARNINGS="ignore" python tools/train_net.py \
   --eval-only
 ```
 
-Swin ImageNet 初始化权重位于 `pretrained/SwinTransformer/`，用于 `configs/` 中的训练或微调配置：
+Swin ImageNet 初始化权重位于 `pretrained/SwinTransformer/`，已经是 Detectron2 key 格式，可直接用于 `configs/` 中的训练或微调配置：
 
 | Backbone | 初始化权重 |
 |---|---|
@@ -132,14 +130,6 @@ Swin ImageNet 初始化权重位于 `pretrained/SwinTransformer/`，用于 `conf
 | Swin-B | `pretrained/SwinTransformer/swin_base_patch4_window7_224_detectron2.pth` |
 
 如果目标数据集类别数与 USIS16K 发布权重不同，请使用对应的 Swin backbone 初始化权重，而不是直接加载发布的 Clarity-Former 权重。
-
-将官方 Swin ImageNet 权重转换为 Detectron2 key 格式：
-
-```shell
-python tools/convert_swin_weights.py \
-  --input /path/to/swin_small_patch4_window7_224.pth \
-  --output pretrained/SwinTransformer/swin_small_patch4_window7_224_detectron2.pth
-```
 
 ## 训练
 
@@ -380,10 +370,8 @@ Make sure these config values match the selected dataset class count:
 
 Released Clarity-Former checkpoints are provided as `pretrained.tar.gz`:
 
-```text
-Baidu Netdisk: https://pan.baidu.com/s/1fQ94UC5yvKFOKFJM1JpMYw?pwd=56md
-Extraction code: 56md
-```
+- Baidu Netdisk: [pretrained.tar.gz](https://pan.baidu.com/s/1fQ94UC5yvKFOKFJM1JpMYw?pwd=56md)
+- Extraction code: `56md`
 
 Unpack the archive under the repository root so that the directory layout becomes `pretrained/ClarityFormer/` and `pretrained/SwinTransformer/`.
 
@@ -407,7 +395,7 @@ PYTHONWARNINGS="ignore" python tools/train_net.py \
   --eval-only
 ```
 
-Swin ImageNet initialization weights are stored under `pretrained/SwinTransformer/` and are intended for training or fine-tuning configs in `configs/`:
+Swin ImageNet initialization weights are stored under `pretrained/SwinTransformer/`, already use the Detectron2 key format, and can be used directly for training or fine-tuning configs in `configs/`:
 
 | Backbone | Initialization |
 |---|---|
@@ -416,14 +404,6 @@ Swin ImageNet initialization weights are stored under `pretrained/SwinTransforme
 | Swin-B | `pretrained/SwinTransformer/swin_base_patch4_window7_224_detectron2.pth` |
 
 For a dataset whose class count differs from the released USIS16K checkpoints, initialize from the matching Swin backbone weight instead of directly loading a released Clarity-Former checkpoint.
-
-To convert an official Swin ImageNet checkpoint to the Detectron2 key format:
-
-```shell
-python tools/convert_swin_weights.py \
-  --input /path/to/swin_small_patch4_window7_224.pth \
-  --output pretrained/SwinTransformer/swin_small_patch4_window7_224_detectron2.pth
-```
 
 ## Training
 
